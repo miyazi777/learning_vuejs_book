@@ -1,0 +1,12 @@
+hello_app/.DS_Store
+hello_app/node_modules
+hello_app/dist
+
+# local env files
+hello_app/.env.local
+hello_app/.env.*.local
+
+# Log files
+hello_app/npm-debug.log*
+hello_app/yarn-debug.log*
+hello_app/yarn-error.log*
