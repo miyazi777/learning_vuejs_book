@@ -9,13 +9,23 @@
   <div id="app">
     {{ message }}
   </div>
+  <hr>
+  <button onclick="doAction();">
+    click
+  </button>
   <script>
+    var data = {
+      message: 'Hello Vue!'
+    };
+
     var app = new Vue({
       el: '#app',
-      data: {
-        message: 'Hello Vue1'
-      }
+      data: data
     })
+
+    function doAction() {
+      data.message = "You Clicked!!!";
+    }
   </script>
 </body>
 </html>
