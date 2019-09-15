@@ -28,21 +28,26 @@
     <p>テーブルを表示する</p>
     <table>
       <tr><th>id</th><th>name</th><th>mail</th></tr>
-      <tr v-for="(item, key) in items">
-        <td>{{key}}</td>
+      <tr v-for="(item, index) in items" v-if="index % 2 == 0">
+        <td>{{index}}</td>
         <td>{{item.name}}</td>
         <td>{{item.mail}}</td>
+      </tr>
+      <tr v-else>
+        <td>***</td>
+        <td>***</td>
+        <td>***</td>
       </tr>
     </table>
   </div>
 
   <script>
     var data = {
-      items: {
-        Taro: {name: "name1", mail: 'mail1@gmail.com'},
-        Hanako: {name: "name2", mail: 'mail2@gmail.com'},
-        Sachiko: {name: "name3", mail: 'mail3@gmail.com'},
-      }
+      items: [
+        {name: "name1", mail: 'mail1@gmail.com'},
+        {name: "name2", mail: 'mail2@gmail.com'},
+        {name: "name3", mail: 'mail3@gmail.com'}
+      ]
     }
 
     var app = new Vue({
