@@ -5,30 +5,38 @@
   <script src="https://unpkg.com/vue"></script>
 </head>
 <body>
+  <style>
+  .ok {
+    font-size: 24pt;
+    color: blue;
+  }
+  .ng {
+    font-size: 24pt;
+    color: gray;
+  }
+  </style>
+
   <h1>Vue.js</h1>
   <div id="app">
-    <p v-bind:style="styles">{{ message }}</p>
+    <p v-if="flag" class="ok">これは正常</p>
+    <p v-else class="ng">問題が発生中です</p>
   </div>
   <hr>
-  <button onclick="doAction();">click</button>
+  <button onclick="doAction();"/>click</button>
 
   <script>
     var data = {
-      message: 'Hello Vue',
-      styles: {
-        margin: '11px',
-        padding: '5px 20px',
-        fontSize: '20pt',
-        color: 'red',
-        backgroundColor: '#fee',
-        border: '3px solid blue'
-      }
-    };
+      flag: true
+    }
 
     var app = new Vue({
       el: '#app',
       data: data
     });
+
+    function doAction() {
+      data.flag = !data.flag;
+    }
   </script>
 </body>
 </html>
