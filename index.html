@@ -6,53 +6,27 @@
 </head>
 <body>
   <style>
-  table tr th {
-    font-size: 16pt;
-    color: white;
-    background-color: blue;
-    padding: 5px 15px;
-  }
-  table tr td {
-    font-size: 16pt;
-    color: gray;
-    border: 1px solid gray;
-  }
-  li {
-    font-size: 16pt;
-    color: gray;
+  .hello {
+    font-size: 20pt;
+    font-weight: bold;
+    border: 1px solid magenta;
+    padding: 5px 10px 0px 10px;
+    margin: 10px;
   }
   </style>
 
   <h1>Vue.js</h1>
   <div id="app">
-    <p>テーブルを表示する</p>
-    <table>
-      <tr><th>id</th><th>name</th><th>mail</th></tr>
-      <tr v-for="(item, index) in items" v-if="index % 2 == 0">
-        <td>{{index}}</td>
-        <td>{{item.name}}</td>
-        <td>{{item.mail}}</td>
-      </tr>
-      <tr v-else>
-        <td>***</td>
-        <td>***</td>
-        <td>***</td>
-      </tr>
-    </table>
+    <hello/>
   </div>
 
   <script>
-    var data = {
-      items: [
-        {name: "name1", mail: 'mail1@gmail.com'},
-        {name: "name2", mail: 'mail2@gmail.com'},
-        {name: "name3", mail: 'mail3@gmail.com'}
-      ]
-    }
-
+    Vue.component('hello',
+      {
+        template: '<p class="hello">Hello</p>'
+      })
     var app = new Vue({
-      el: '#app',
-      data: data
+      el: '#app'
     });
   </script>
 </body>
