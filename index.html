@@ -25,40 +25,29 @@
 
   <h1>Vue.js</h1>
   <div id="app">
-    <template v-if="flag">
-      <p>データをテーブル表示する</p>
-      <table>
-        <tr><th>Name</th><th>mail</th></tr>
-        <tr><td>Name1</td><td>mail1@gmail.com</td></tr>
-        <tr><td>Name2</td><td>mail2@gmail.com</td></tr>
-        <tr><td>Name3</td><td>mail3@gmail.com</td></tr>
-      </table>
-    </template>
-    <template v-else>
-      <p>データをリスト表示</p>
-      <ul>
-        <li>Name1,mail1@gmail.com</li>
-        <li>Name2,mail2@gmail.com</li>
-        <li>Name3,mail3@gmail.com</li>
-      </ul>
-    </template>
+    <p>テーブルを表示する</p>
+    <table>
+      <tr><th>name</th><th>mail</th></tr>
+      <tr v-for="item in items">
+        <td>{{item.name}}</td>
+        <td>{{item.mail}}</td>
+      </tr>
+    </table>
   </div>
-  <hr>
-  <button onclick="doAction();"/>click</button>
 
   <script>
     var data = {
-      flag: true
+      items: [
+        {name: "name1", mail: 'mail1@gmail.com'},
+        {name: "name2", mail: 'mail2@gmail.com'},
+        {name: "name3", mail: 'mail3egmail.com'},
+      ]
     }
 
     var app = new Vue({
       el: '#app',
       data: data
     });
-
-    function doAction() {
-      data.flag = !data.flag;
-    }
   </script>
 </body>
 </html>
