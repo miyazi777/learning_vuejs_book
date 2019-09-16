@@ -25,3 +25,8 @@ calc_app/yarn-debug.log*
 calc_app/yarn-error.log*
 
 nuxt_first_app/node_modules
+
+nuxt_app/node_modules
+nuxt_app/logs
+nuxt_app/*.log
+nuxt_app/npm-debug.log*
