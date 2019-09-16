@@ -25,6 +25,7 @@ export default {
   methods: {
     doAction: function() {
       this.message = 'Hello, ' + this.input + 'san';
+      this.$emit('result-event', this.input);
     }
   }
 }

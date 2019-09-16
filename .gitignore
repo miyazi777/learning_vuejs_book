@@ -10,3 +10,16 @@ hello_app/.env.*.local
 hello_app/npm-debug.log*
 hello_app/yarn-debug.log*
 hello_app/yarn-error.log*
+
+calc_app/.DS_Store
+calc_app/node_modules
+calc_app/dist
+
+# local env files
+calc_app/.env.local
+calc_app/.env.*.local
+
+# Log files
+calc_app/npm-debug.log*
+calc_app/yarn-debug.log*
+calc_app/yarn-error.log*
