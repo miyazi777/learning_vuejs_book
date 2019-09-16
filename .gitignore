@@ -23,3 +23,5 @@ calc_app/.env.*.local
 calc_app/npm-debug.log*
 calc_app/yarn-debug.log*
 calc_app/yarn-error.log*
+
+nuxt_first_app/node_modules
