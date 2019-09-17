@@ -3,7 +3,9 @@
     <h1>{{title}}</h1>
     <p>{{$store.state.message}}</p>
     <hr>
-    <router-link to="/other">Go to Other</router-link>
+    <div class="doAction" v-on:click="doAction">
+      <a>clicked: {{ $store.state.counter }}</a>
+    </div>
   </section>
 </template>
 
@@ -14,6 +16,11 @@ export default {
       title: 'Hello',
     };
   },
+  methods: {
+    doAction: function() {
+      this.$store.state.counter++;
+    }
+  }
 };
 </script>
 
