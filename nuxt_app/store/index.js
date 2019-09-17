@@ -9,10 +9,12 @@ const createStore = () => {
       };
     },
     mutations: {
-      count: function(state, n) {
-        state.counter += n;
+      count: function(state, obj) {
+        state.message = obj.message;
+        state.counter += obj.add;
       },
       reset: function(state) {
+        state.message = 'reset';
         state.counter = 0;
       }
     }
