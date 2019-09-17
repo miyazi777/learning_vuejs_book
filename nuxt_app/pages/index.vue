@@ -3,8 +3,11 @@
     <h1>{{title}}</h1>
     <p>{{$store.state.message}}</p>
     <hr>
-    <div class="doAction" v-on:click="doAction">
+    <div class="link" @click="$store.commit('count')">
       <a>clicked: {{ $store.state.counter }}</a>
+    </div>
+    <div class="link" @click="$store.commit('reset')">
+      <a>reset</a>
     </div>
   </section>
 </template>
@@ -15,11 +18,6 @@ export default {
     return {
       title: 'Hello',
     };
-  },
-  methods: {
-    doAction: function() {
-      this.$store.state.counter++;
-    }
   }
 };
 </script>
