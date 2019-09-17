@@ -3,7 +3,7 @@
     <h1>{{title}}</h1>
     <p>{{$store.state.message}}</p>
     <hr>
-    <div class="link" @click="$store.dispatch('doit')">
+    <div class="link" @click="$store.commit('doit')">
       <a>clicked: {{ $store.state.counter }}</a>
     </div>
     <div class="link" @click="$store.commit('reset')">
