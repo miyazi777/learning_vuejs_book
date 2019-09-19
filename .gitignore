@@ -35,3 +35,9 @@ memo/node_modules
 memo/logs
 memo/*.log
 memo/npm-debug.log*
+
+nuxt_app2/node_modules
+nuxt_app2/logs
+nuxt_app2/*.log
+nuxt_app2/npm-debug.log*
+
