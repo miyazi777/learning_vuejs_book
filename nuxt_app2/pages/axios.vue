@@ -2,60 +2,40 @@
   <section class="container">
     <h1>{{ title }}</h1>
     <p>{{ message }}</p>
-    <div>
-      <input type="text" v-model="msg"/>
-      <button @click="doClick">click</button>
-    </div>
-    <table>
-      <tr>
-        <th>User ID</th>
-        <td>{{json_data.userId}}</td>
-      </tr>
-      <tr>
-        <th>ID</th>
-        <td>{{json_data.id}}</td>
-      </tr>
-      <tr>
-        <th>Title</th>
-        <td>{{json_data.title}}</td>
-      </tr>
-      <tr>
-        <th>Body</th>
-        <td>{{json_data.body}}</td>
-      </tr>
-    </table>
+    <ul v-for="(data, key) in json_data">
+      <li>{{data.name}} {{data.age}} [{{key}}]</li>
+    </ul>
   </section>
 </template>
 
 <script>
 const axios = require('axios');
 
-let url = "https://jsonplaceholder.typicode.com/posts/";
+let url = "https://takeshi-learn-vue-js.firebaseio.com/person.json";
 
 export default {
   data: function() {
     return {
       title: 'Axios',
       message: 'axios sample',
-      msg: '',
-      json_data: {},
     };
   },
-  methods: {
-    doClick: function(event) {
-      axios.get(url + this.msg).then((res) => {
-        this.message = 'get ID=' + this.msg;
-        this.json_data = res.data;
-      }).catch((error) => {
-        this.message = 'ERROR';
-        this.json_data = {};
-      });
-    }
+  asyncData: async function() {
+    let result = await axios.get(url);
+    return { json_data: result.data };
   }
 }
 </script>
 
 <style>
+ul {
+  margin: 0px 10px;
+  background-color: aliceblue;
+}
+li {
+  padding: 10px;
+  font-size: 16pt;
+}
 tr th {
   width: 150px;
   background-color: darkblue;
